@@ -1,0 +1,17 @@
+version: '3.1'
+
+services:
+  postgres:
+    image: postgres:13
+    restart: always
+    environment:
+      POSTGRES_USER: myuser
+      POSTGRES_PASSWORD: mypassword
+      POSTGRES_DB: checkout
+    ports:
+      - "5432:5432"
+  redis:
+    image: redis:6
+    restart: always
+    ports:
+      - "6379:6379"
